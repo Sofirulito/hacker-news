@@ -11,7 +11,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [favorites, setFavorites] = useState([])
+  // const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     setIsLoading(true);
@@ -66,9 +66,9 @@ const Home = () => {
       <ReactPaginate 
         nextLabel= ">"
         previousLabel="<"
-        breakLabel="..."
-        forcePage={currentPage}
+        breakLabel='...'
         pageCount={totalPages}
+        pageRangeDisplayed={9}
         renderOnZeroPageCount={null}
         onPageChange={handlePageChange}
         className="paginator"
