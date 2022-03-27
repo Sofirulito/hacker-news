@@ -1,16 +1,18 @@
 import * as React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './app.css'
-import Home from "./pages/home";
+import News from './pages/news'
+import FaveNews from "./pages/faveNews";
 import Header from './components/Header'
-
+import Navigation from "./components/Nav";
 function App() {
   return (
     <div className="App">
       <Header />
+      <Navigation />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/"></Route>
+        <Route path="/" element={<News />}></Route>
+        <Route path="/myfaves" element={<FaveNews />}></Route>
       </Routes>
     </div>
   );

@@ -2,12 +2,22 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fcfcfc;
+  background-color: var(--second-light);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --primary-light: #FFF;
+  --second-light: #fcfcfc;
+  --primary-grey: #6b6b6b;
+  --second-grey: #606060;
+  --third-grey: #979797;
 }

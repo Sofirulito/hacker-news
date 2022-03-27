@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  border-radius: 6px;
+  border: solid 1px var(--third-grey);
+  background-color: var(--primary-light);
+  justify-content: space-between;
+}
+
+.card__link {
+}
+
+.card__url {
+  text-decoration: none;
+  display: block;
+  padding: 15px 26px 14px;
+}
+
+.card__time {
+  font-size: .7rem;
+  color: #767676;
+  display: flex;
+  align-items: center;
+}
+
+.card__time img {
+  margin-right: 8px;
+}
+
+.card__title {
+  color: #6b6b6b;
+  margin-bottom: 0;
+}
+
+.card__fav {
+  background-color: rgba(96, 96, 96, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 12%;
+}

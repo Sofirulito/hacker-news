@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import NewsCard from "../components/NewsCard";
+import NewsCard from "../components/NewsCard/NewsCard";
 import ReactPaginate from "react-paginate";
+import Select from "../components/Select/Select";
 
 const baseUrl = 'https://hn.algolia.com/api/v1'
 
-const Home = () => {
-  const [selectValue, setSelectValue] = useState('');
+const News = () => {
+  const [selectValue, setSelectValue] = useState('Select your news');
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
@@ -41,22 +42,15 @@ const Home = () => {
     setCurrentPage(event.selected)
   }
 
-  const handleChange = (e) => {
-    setCurrentPage(0)
-    setSelectValue(e);
-  }
+  // const handleChange = (e) => {
+  //   setCurrentPage(0)
+  //   setSelectValue(e);
+  // }
 
   return (
     <div className="container">
-      <form className="form">
-        <select onChange={(e) => handleChange(e.target.value)}>
-          <option value="default">Select your news</option>
-          <option value="angular">Angular</option>
-          <option value="react">Reactjs</option>
-          <option value="vue">Vuejs</option>
-        </select>
-      </form>
-      <div className="news-container">
+      <Select selectValue={selectValue} setSelectValue={setSelectValue} setCurrentPage={setCurrentPage}/>
+      <div className="news__container">
         { 
           isLoading ? <p>Loading...</p> : articles.map((article) => (
             <NewsCard key={article.objectID} {...article}/>
@@ -76,9 +70,8 @@ const Home = () => {
         previousClassName="prev-page"
         nextClassName="next-page"
       />
-      {selectValue}
     </div>
   )
 }
 
-export default Home;
+export default News;

@@ -2,3 +2,13 @@
   max-width: 1140px;
   margin: 0 auto;
 }
+
+@media (min-width: 992px) {
+  .news__container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    column-gap: 40px;
+    row-gap: 30px;
+  }
+}
+
