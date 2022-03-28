@@ -7,16 +7,20 @@ import Select from "../components/Select/Select";
 const baseUrl = 'https://hn.algolia.com/api/v1'
 
 const News = () => {
-  const [selectValue, setSelectValue] = useState('Select your news');
+  const [selectValue, setSelectValue] = useState(() => {
+    const saved = localStorage.getItem('newsValue');
+    const initialValue = JSON.parse(saved)
+    return initialValue || "Select your news"
+  });
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     setIsLoading(true);
-    fetchGeneralNews()
+    fetchGeneralNews();  
+    localStorage.setItem('newsValue', JSON.stringify(selectValue))
   }, [currentPage, selectValue])
 
 
@@ -40,10 +44,6 @@ const News = () => {
 
   const handlePageChange = event => {
     setCurrentPage(event.selected)
-  }
-
-  const toggleFavs = favs => {
-    setFavorites(favorites.map);
   }
 
   return (

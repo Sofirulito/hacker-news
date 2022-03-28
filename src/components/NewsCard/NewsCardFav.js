@@ -1,6 +1,6 @@
 import React from 'react';
 import IconCLock from '../../assets/icons/icon-time-2.png';
-import IconHeart from '../../assets/icons/iconmonstr-favorite-2.svg';
+import IconHeartFull from '../../assets/icons/iconmonstr-favorite-3.svg';
 
 const NewsCardFav = ({fav}) => {
   return (
@@ -12,7 +12,7 @@ const NewsCardFav = ({fav}) => {
       </a>
     </div>
     <div className="card__fav">
-      <img src={IconHeart} alt="" />
+      <img src={IconHeartFull} alt="" />
     </div>
   </div>
   )

@@ -7,6 +7,7 @@ import iconVue from '../../assets/icons/icon-vue.png';
 const Select = ({selectValue, setSelectValue, setCurrentPage}) => {
 
   const [isActive, setIsActive] = useState(false);
+  
   const options = [
     {value: 'Angular', icon: iconAngular},
     {value: 'Reactjs', icon: iconReact},
@@ -28,7 +29,7 @@ const Select = ({selectValue, setSelectValue, setCurrentPage}) => {
                 setCurrentPage(0);
               }} 
             >
-              <img src={option.icon} alt={`icon-${option.value}`} className="dropdown__image"/>
+              {!option.icon ? '' : <img src={option.icon} alt={`icon-${option.value}`} className="dropdown__image"/> }
               {option.value}
             </div>
           ))}

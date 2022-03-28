@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalState'
-import './newsCard.css'
-import IconCLock from '../../assets/icons/icon-time-2.png'
-import IconHeart from '../../assets/icons/iconmonstr-favorite-2.svg'
+import { GlobalContext } from '../../context/GlobalState';
+import './newsCard.css';
+import IconCLock from '../../assets/icons/icon-time-2.png';
+import IconHeart from '../../assets/icons/iconmonstr-favorite-2.svg';
+import IconHeartFull from '../../assets/icons/iconmonstr-favorite-3.svg';
 
 const NewsCard = ({article}) => {
   const { addArticleToFavList, favlist } = useContext(GlobalContext);
@@ -23,11 +24,8 @@ const NewsCard = ({article}) => {
       </div>
       <div className="card__fav">
         <button disabled={favlistDisabled} onClick={() => addArticleToFavList(article)}>
-          <img src={IconHeart} alt="icon-fav" />
+          {!favlistDisabled ? <img src={IconHeart} alt="icon-fav" /> : <img src={IconHeartFull} alt="icon-fav" />}
         </button>
-        {/* {!isFavorite && (
-          <img src={IconHeart} alt="" />
-        )} */}
       </div>
     </div>
   )

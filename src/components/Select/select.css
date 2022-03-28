@@ -2,6 +2,7 @@
   position: relative;
   max-width: 240px;
   width: 100%;
+  margin: 0 auto 40px;
 }
 
 .dropdown__btn {
@@ -28,8 +29,8 @@
   left: 0;
   right: 0;
   margin: 0;
-  box-shadow: 0 2px 2px 0 #dad8d8;
-  background-color: #fff;
+  box-shadow: 0 2px 2px 0 var(--shadow-light);
+  background-color: var(--primary-light);
 }
 
 .dropdown__item {
@@ -39,10 +40,16 @@
   cursor: pointer;
   width: 100%;
   padding: 15px 10px 10px;
-  color: #343434;
+  color: var(--four-grey);
   transition: all .2s;
 }
 
 .dropdown__image {
   margin-right: 13px;
+}
+
+@media (min-width: 992px) {
+  .dropdown{
+    margin: 0 0 40px;
+  }
 }

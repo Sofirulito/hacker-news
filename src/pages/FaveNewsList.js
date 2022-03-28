@@ -6,13 +6,13 @@ const FaveNews = () => {
   const {favlist} = useContext(GlobalContext);
 
   return (
-    <>
-      <li>Lista</li>
-      {console.log(favlist)}
-      {favlist.map((fav) => (
-        <NewsCardFav key={fav.objectID} fav={fav} />
-      ))}
-    </>
+    <div className="container">
+      <div className="news__container">
+        {favlist.length === 0 ? <p>Add favorites news!</p> : favlist.map((fav) => (
+          <NewsCardFav key={fav.objectID} fav={fav} />
+        ))}
+      </div>
+    </div>
   )
 }
 
