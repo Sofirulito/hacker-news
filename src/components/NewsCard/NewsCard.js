@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState'
 import './newsCard.css'
 import IconCLock from '../../assets/icons/icon-time-2.png'

@@ -1,7 +1,17 @@
+import React, {useContext} from "react";
+import { GlobalContext } from "../context/GlobalState";
+import NewsCardFav from "../components/NewsCard/NewsCardFav";
+
 const FaveNews = () => {
+  const {favlist} = useContext(GlobalContext);
+
   return (
     <>
-      <p>Mis favoritos</p>
+      <li>Lista</li>
+      {console.log(favlist)}
+      {favlist.map((fav) => (
+        <NewsCardFav key={fav.objectID} fav={fav} />
+      ))}
     </>
   )
 }
