@@ -12,7 +12,7 @@ const News = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  // const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     setIsLoading(true);
@@ -42,20 +42,17 @@ const News = () => {
     setCurrentPage(event.selected)
   }
 
-  // const handleChange = (e) => {
-  //   setCurrentPage(0)
-  //   setSelectValue(e);
-  // }
+  const toggleFavs = favs => {
+    setFavorites(favorites.map);
+  }
 
   return (
     <div className="container">
       <Select selectValue={selectValue} setSelectValue={setSelectValue} setCurrentPage={setCurrentPage}/>
       <div className="news__container">
-        { 
-          isLoading ? <p>Loading...</p> : articles.map((article) => (
-            <NewsCard key={article.objectID} {...article}/>
-          ))
-        }
+        {isLoading ? <p>Loading...</p> : articles.map((article) => (
+          <NewsCard key={article.objectID} article={article}/>
+        ))}
       </div>
       <ReactPaginate 
         nextLabel= ">"

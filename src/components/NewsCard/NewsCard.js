@@ -1,24 +1,33 @@
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalState'
 import './newsCard.css'
 import IconCLock from '../../assets/icons/icon-time-2.png'
 import IconHeart from '../../assets/icons/iconmonstr-favorite-2.svg'
-import { useState } from 'react';
 
-const NewsCard = (props) => {
-  const [isFavorite, setIsFavorite] = useState('');
+const NewsCard = ({article}) => {
+  const { addArticleToFavList, favlist } = useContext(GlobalContext);
+  
+  // Check if article is in the favlist
+  let storedArticle = favlist.find(o => o.objectID === article.objectID);
+  const favlistDisabled = storedArticle ? true : false;
 
-  if(!props.story_url) return null;
+  if(!article.story_url) return null;
+
   return (
     <div className="card">
       <div className="card__link">
-        <a href={props.story_url} target="_blank" rel="noreferrer" className='card__url'>
-          <p className='card__time'> <img src={IconCLock} alt="icon-clock" />{props.created_at} by {props.author}</p>
-          <p className='card__title'>{props.story_title}</p>
+        <a href={article.story_url} target="_blank" rel="noreferrer" className='card__url'>
+          <p className='card__time'> <img src={IconCLock} alt="icon-clock" />{article.created_at} by {article.author}</p>
+          <p className='card__title'>{article.story_title}</p>
         </a>
       </div>
       <div className="card__fav">
-        {!isFavorite && (
+        <button disabled={favlistDisabled} onClick={() => addArticleToFavList(article)}>
+          <img src={IconHeart} alt="icon-fav" />
+        </button>
+        {/* {!isFavorite && (
           <img src={IconHeart} alt="" />
-        )}
+        )} */}
       </div>
     </div>
   )
