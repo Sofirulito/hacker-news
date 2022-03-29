@@ -23,5 +23,5 @@ Builds the app for production to the `build` folder.\
 ## Project screen shots
 
 ![Home](https://github.com/Sofirulito/hacker-news/tree/master/screenshots/NewsHome.png)
-![MyFaves](https://github.com/Sofirulito/hacker-news/tree/master/screenshots/MyFaves.png)
+![MyFaves](https://raw.githubusercontent.com/Sofirulito/hacker-news/master/screenshots/MyFaves.png)
 
