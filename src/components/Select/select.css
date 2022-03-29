@@ -17,11 +17,11 @@
 .dropdown__btn::after {
   content: "\02038";
   font-size: 2.2rem;
-  line-height: initial;
+  line-height: unset;
   position: absolute;
   transform: rotate(180deg);
   right: 12px;
-  top: 40%;
+  top: 25%;
 }
 
 .dropdown__content {

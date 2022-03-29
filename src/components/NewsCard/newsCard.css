@@ -5,13 +5,10 @@
   border: solid 1px var(--third-grey);
   background-color: var(--primary-light);
   justify-content: space-between;
+  margin-bottom: 20px;
 }
-
 .card:hover {
   opacity: .4;
-}
-
-.card__link {
 }
 
 .card__url {
@@ -26,7 +23,6 @@
   display: flex;
   align-items: center;
 }
-
 .card__time img {
   margin-right: 8px;
 }
@@ -41,11 +37,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0 0 12%;
+  flex: 0 1 70px;
 }
-
 .card__fav button {
   border: 0;
   cursor: pointer;
   background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  .card {
+    margin-bottom: 0;
+  }
 }

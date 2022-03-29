@@ -55,8 +55,8 @@ const News = () => {
         ))}
       </div>
       <ReactPaginate 
-        nextLabel= ">"
-        previousLabel="<"
+        nextLabel= "&#8248;"
+        previousLabel="&#8248;"
         breakLabel='...'
         pageCount={totalPages}
         pageRangeDisplayed={9}
