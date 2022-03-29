@@ -5,6 +5,11 @@ export default(state, action) => {
       return {
         ...state,
         favlist: [action.payload, ...state.favlist]
+      };
+    case "REMOVE_ARTICLE_FROM_FAVLIST":
+      return {
+        ...state,
+        favlist: state.favlist.filter(fav => fav.objectID !== action.payload)
       }
     default:
       return state;

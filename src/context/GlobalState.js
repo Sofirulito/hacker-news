@@ -24,8 +24,12 @@ export const GlobalProvider = props => {
     dispatch({type: "ADD_ARTICLE_TO_FAVLIST", payload: article })
   };
 
+  const removeArticleFromFavList = (id) => {
+    dispatch({type: "REMOVE_ARTICLE_FROM_FAVLIST", payload: id })
+  };
+
   return (
-    <GlobalContext.Provider value={{ favlist: state.favlist,  addArticleToFavList }}>
+    <GlobalContext.Provider value={{ favlist: state.favlist,  addArticleToFavList, removeArticleFromFavList }}>
       {props.children}
     </GlobalContext.Provider>
   )

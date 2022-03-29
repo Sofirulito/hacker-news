@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { GlobalContext } from '../../context/GlobalState';
 import IconCLock from '../../assets/icons/icon-time-2.png';
 import IconHeartFull from '../../assets/icons/iconmonstr-favorite-3.svg';
 
 const NewsCardFav = ({fav}) => {
+  const { removeArticleFromFavList } = useContext(GlobalContext)
   return (
     <div className="card">
     <div className="card__link">
@@ -12,7 +14,9 @@ const NewsCardFav = ({fav}) => {
       </a>
     </div>
     <div className="card__fav">
-      <img src={IconHeartFull} alt="" />
+      <button onClick={() => removeArticleFromFavList(fav.objectID)}>
+        <img src={IconHeartFull} alt="" />
+      </button>
     </div>
   </div>
   )

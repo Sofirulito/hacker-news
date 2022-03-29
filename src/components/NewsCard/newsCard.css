@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0 1 70px;
+  flex: 0 0 70px;
 }
 .card__fav button {
   border: 0;
